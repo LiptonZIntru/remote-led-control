@@ -4,7 +4,7 @@ Backend of this project is written in python, frontend is combination of HTML, C
 Range input are created at http://danielstern.ca/range.css/#/.
 
 Required libraries:
-flask - for install just type "pip install flask" into terminal.
+- flask - for install just type "pip install flask" into terminal.
 
 After that you can run the project typing "python app.py". 
 Your webserver will be accessable at "http://<ip_of_your_raspberry_pi>", port 80.
