@@ -1,5 +1,5 @@
 # remote-led-control
-This project is about controlling RGB led via web GUI for raspberry pi
+This project is about controlling RGB led via web GUI for raspberry pi.
 Backend of this project is written in python, frontend is combination of HTML, CSS and JS.
 Range input are created at http://danielstern.ca/range.css/#/.
 
