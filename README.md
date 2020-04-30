@@ -10,5 +10,5 @@ After that you can run the project typing "python app.py".
 Your webserver will be accessable at "http://<ip_of_your_raspberry_pi>", port 80.
 
 Note that: 
-     - You must have raspberry pi with connection to wifi
-     - You must have python and pip installer installed on raspberry pi
+- You must have raspberry pi with connection to wifi
+- You must have python and pip installer installed on raspberry pi
