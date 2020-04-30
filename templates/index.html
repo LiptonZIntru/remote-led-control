@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB</title>
+</head>
+<body onload="document.body.style.zoom = '280%'" style="background-color: #121212;">
+
+    <style>
+input[type=range].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 1.2px 0;
+}
+input[type=range].slider:focus {
+  outline: none;
+}
+input[type=range].slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #484d4d;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].slider::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 28px;
+  width: 27px;
+  border-radius: 0px;
+  background: rgba(126, 255, 73, 0.93);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.2px;
+}
+input[type=range].slider:focus::-webkit-slider-runnable-track {
+  background: #545a5a;
+}
+input[type=range].slider::-moz-range-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #484d4d;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].slider::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 28px;
+  width: 27px;
+  border-radius: 0px;
+  background: rgba(126, 255, 73, 0.93);
+  cursor: pointer;
+}
+input[type=range].slider::-ms-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].slider::-ms-fill-lower {
+  background: #3c4040;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].slider::-ms-fill-upper {
+  background: #484d4d;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].slider::-ms-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 28px;
+  width: 27px;
+  border-radius: 0px;
+  background: rgba(126, 255, 73, 0.93);
+  cursor: pointer;
+  height: 25.6px;
+}
+input[type=range].slider:focus::-ms-fill-lower {
+  background: #484d4d;
+}
+input[type=range].slider:focus::-ms-fill-upper {
+  background: #545a5a;
+}
+.heading{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.max{
+    max-width: 500px;
+}
+    </style>
+    <h3 class="heading">Red</h3><input type="range" class="slider max" id="red" oninput="update()" value="{{ red }}" min="1" max="100">
+    <h3 class="heading">Green</h3><input type="range" class="slider max" id="green" oninput="update()" value="{{ green }}" min="1" max="100">
+    <h3 class="heading">Blue</h3><input type="range" class="slider max" id="blue" oninput="update()" value="{{ blue }}" min="1" max="100">
+    <script>
+        function update()
+        {
+            red = document.getElementById('red').value;
+            green = document.getElementById('green').value;
+            blue = document.getElementById('blue').value;
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", "/rgb/" + red + "/" + green + "/" + blue);
+            xmlHttp.send();
+        }
+    </script>
+</body>
+</html>
